@@ -5,7 +5,7 @@ public class Bulbasaur {
     private double altura = 0.7;
     private float peso = 6.9F;
     private String sexo;
-    private String[] debilidades = {"Fuego","Psiquico","Volador","Hielo"};
+    private String[] debilidades = new String[4];
     private int vida;
     private int ataque;
 
@@ -52,5 +52,24 @@ public class Bulbasaur {
 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
+    }
+
+    public String[] getDebilidades() {
+        return debilidades;
+    }
+
+    public void setDebilidades() {
+        this.debilidades[0] = "Volador";
+        this.debilidades[0] = "Fuego";
+        this.debilidades[0] = "Hielo";
+        this.debilidades[0] = "Psiquico";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void damage(int ataque) {
+        vida = vida - ataque;
     }
 }

@@ -9,6 +9,8 @@ public class Arceus {
     private int vida;
     private int ataque;
 
+    private boolean isDisponible = true;
+
     //constructores
 
     public Arceus(String nombre, double altura, float peso, String sexo, int vida, int ataque) {
@@ -22,6 +24,14 @@ public class Arceus {
 
     //getter y setter
 
+
+    public boolean isDisponible() {
+        return isDisponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        isDisponible = disponible;
+    }
 
     public double getAltura() {
         return altura;
@@ -43,6 +53,10 @@ public class Arceus {
         return vida;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setVida(int vida) {
         this.vida = vida;
     }
@@ -53,5 +67,10 @@ public class Arceus {
 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
+    }
+
+    public void attack(Bulbasaur rival, int damage) {
+        rival.damage(ataque);
+        System.out.println(nombre + " atacó a " + rival.getNombre() + " con "+ ataque);
     }
 }
